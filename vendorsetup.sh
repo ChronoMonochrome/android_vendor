@@ -3,6 +3,7 @@ COMBOS()
 {
 cat<<EOF
 bacon
+codina
 codinalte
 deb
 d2lte

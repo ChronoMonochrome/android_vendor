@@ -1,4 +1,5 @@
 PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/vanir_codina.mk \
     $(LOCAL_DIR)/vanir_anzu.mk \
     $(LOCAL_DIR)/vanir_bacon.mk \
     $(LOCAL_DIR)/vanir_coconut.mk \
