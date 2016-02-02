@@ -19,10 +19,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Thank you, please drive thru!
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.dun.override=0
 
-ifneq ($(TARGET_BUILD_VARIANT),eng)
-# Enable ADB authentication
-ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
-endif
+# Disable ADB authentication
+ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0
 
 # Backup Tool
 ifneq ($(WITH_GMS),true)
@@ -34,16 +32,17 @@ endif
 
 # init.d support
 PRODUCT_COPY_FILES += \
-    vendor/eos/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
+    #vendor/eos/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/eos/prebuilt/common/bin/sysinit:system/bin/sysinit
 
 # userinit support
-PRODUCT_COPY_FILES += \
-    vendor/eos/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
+#PRODUCT_COPY_FILES += \
+#    vendor/eos/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 
 # init file
 PRODUCT_COPY_FILES += \
-    vendor/eos/prebuilt/common/etc/init.eos.rc:root/init.eos.rc
+    vendor/eos/prebuilt/common/etc/init.eos.rc:root/init.eos.rc \
+    vendor/eos/prebuilt/common/etc/init.kernel.rc:root/init.kernel.rc
 
 # Copy latinime for gesture typing
 PRODUCT_COPY_FILES += \
